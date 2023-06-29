@@ -9,6 +9,7 @@ namespace Ice_DEV
     {
         public string charName = "name";
         //base stat
+        [Header("base stat")]
         public int baseMaxHp = 0;
         public int baseMaxRL = 0;
         public int baseMaxOxy = 0;
@@ -22,6 +23,7 @@ namespace Ice_DEV
 
 
         //Modifier stat
+        [Header("Modifier stat")]
         public int MaxHp = 0;
         public int MaxRL = 0;
         public int MaxOxy = 0;
