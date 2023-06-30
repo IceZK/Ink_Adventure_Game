@@ -17,17 +17,20 @@ namespace IceZK_DEV
         // Update is called once per frame
         void Update()
         {
-            if(Input.GetButtonDown("Inventory") && MenuActivated)
+            
+            if (Input.GetButtonDown("Inventory") && MenuActivated)
             {
                 Time.timeScale = 1;
                 InventoryMenu.SetActive(false);
                 MenuActivated = false;
+                Debug.Log("Inventory Close");
             }
-            else if (Input.GetButtonDown("Inventory") && MenuActivated)
+            else if (Input.GetButtonDown("Inventory") && !MenuActivated)
             {
                 Time.timeScale = 0;
                 InventoryMenu.SetActive(true);
                 MenuActivated = true;
+                Debug.Log("Inventory Close");
             }
         }
 
@@ -39,6 +42,17 @@ namespace IceZK_DEV
                 {
                     itemSlot[i].AddItem(itemName, quantity, itemSprite);
                     return;
+                }
+            }
+        }
+
+        public void DeselectedAllSlot()
+        {
+            for (int i = 0; i < itemSlot.Length; i++)
+            {
+                {
+                    itemSlot[i].selctedShader.SetActive(false);
+                    itemSlot[i].thisItemSelected = false;
                 }
             }
         }
