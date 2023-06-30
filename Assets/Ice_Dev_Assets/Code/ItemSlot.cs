@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+
 namespace IceZK_DEV
 {
     public class ItemSlot : MonoBehaviour, IPointerClickHandler
@@ -17,6 +18,7 @@ namespace IceZK_DEV
 
 
         [Header("Item Slot")]
+        
         [SerializeField] private TMP_Text quantityText;
         [SerializeField] private Image itemImage;
 
