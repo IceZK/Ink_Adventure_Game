@@ -6,15 +6,12 @@ namespace IceZK_DEV
     {
         protected virtual void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player")){ 
-                if (gameObject.CompareTag("Diamond"))
-                { 
-                    ProcessTriggerWithDiamond();
-                }else if (gameObject.CompareTag("Coin"))
+            if (other.CompareTag("Player")){
+                if (gameObject.CompareTag("Item"))
                 {
-                    ProcessTriggerWithCoin();
+                    ProcessTriggerWithItem();
+
                 }
-                
                 //Get the Inventory component from the player
                 var inventory = other.GetComponent <Inventory2>();
                 
@@ -27,7 +24,7 @@ namespace IceZK_DEV
 
         }
 
-        protected virtual void ProcessTriggerWithDiamond()
+        protected virtual void ProcessTriggerWithItem()
         {
             
         }

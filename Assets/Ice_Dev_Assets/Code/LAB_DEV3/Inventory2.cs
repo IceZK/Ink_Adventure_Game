@@ -10,24 +10,33 @@ namespace IceZK_DEV
         [SerializeField] protected List<string> m_ItemInventory = new();
         protected Dictionary<string,int> m_DictItemCount = new();
 
+        void update()
+        {
+            
+        }
         public void AddItem(string itemName, int amount)
         {
             m_ItemInventory.Add(itemName);
-            
+
             if (m_DictItemCount.ContainsKey(itemName))
             {
                 m_DictItemCount[itemName] += amount;
             }
             else
             {
-                m_DictItemCount.Add(itemName ,1);
+                m_DictItemCount.Add(itemName, 1);
+            }
+
+            if (itemName == "GG")
+            {
+                Application.Quit();
             }
         }
 
         private void OnGUI()
         {
-            DrawItemInventory();
-            DrawItemCount();
+            //DrawItemInventory();
+            //DrawItemCount();
         }
 
         private void DrawItemInventory()
