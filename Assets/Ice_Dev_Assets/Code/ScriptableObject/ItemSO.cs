@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IceZK_DEV
 {
-    public enum ItemType {Useable, Material }
+    public enum ItemType {Useable, Material, ITEM }
 
     [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item", order = 1)]
 
