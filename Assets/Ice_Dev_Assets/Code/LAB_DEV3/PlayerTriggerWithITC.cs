@@ -11,7 +11,7 @@ namespace IceZK_DEV
         private InventoryManager inventoryManager;
         void Start()
         {
-            inventoryManager = GameObject.Find("InventoryCavas").GetComponent<InventoryManager>();
+            inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         }
         private void OnTriggerEnter(Collider other)
         {   

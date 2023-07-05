@@ -27,6 +27,7 @@ namespace IceZK_DEV
             ItemName = m_ItemSO.ItemName;
             icon = m_ItemSO.icon;
             type = m_ItemSO.type;
+            amount = m_ItemSO.amount;
             this.gameObject.name = m_ItemSO.ItemName;
         }
         void update()
