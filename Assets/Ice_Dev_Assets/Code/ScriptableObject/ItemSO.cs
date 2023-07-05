@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IceZK_DEV
 {
-    public enum ItemType {Useable, Material, ITEM}
+    public enum ItemType {Material, ITEM, Useable}
 
     [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item", order = 1)]
 
@@ -14,6 +14,7 @@ namespace IceZK_DEV
         public string ItemName;
         public Sprite icon;
         public ItemType type;
+        public int amount;
         public int amountToChageMaxStat;
         public int amountToChangeStat;
 

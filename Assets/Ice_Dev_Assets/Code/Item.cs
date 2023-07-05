@@ -14,6 +14,7 @@ namespace IceZK_DEV
         public string ItemName;
         public Sprite icon;
         public ItemType type;
+        public int amount;
         private int amountToChageMaxStat;
         private int amountToChangeStat;
 

@@ -8,31 +8,35 @@ namespace IceZK_DEV
 {
     public class PlayerTriggerWithITC : MonoBehaviour
     {
-        private void OnTriggerEnter(Collider other)
+        private InventoryManager inventoryManager;
+        void Start()
         {
+            inventoryManager = GameObject.Find("InventoryCavas").GetComponent<InventoryManager>();
+        }
+        private void OnTriggerEnter(Collider other)
+        {   
+            Item item = other.GetComponent <Item>();
+
+            //var inventory = GetComponent<InventoryManager>();
             
-            Item itc = other.GetComponent <Item>();
-            
-            var inventory = GetComponent <Inventory2>();
-            
-            if (itc != null)
+
+            if (item != null)
             {
 
 
-                switch (itc.type)
+                switch (item.type)
                 {
                     case ItemType.Useable:
-                        inventory.AddItem(itc.ItemName, 1);
+                        inventoryManager.AddItem(item.ItemName, item.amount, item.icon);
                         break;
                     case ItemType.Material:
-                        inventory.AddItem(itc.ItemName, 1);
+                        inventoryManager.AddItem(item.ItemName, item.amount, item.icon);
                         break;
                     case ItemType.ITEM:
-                        inventory.AddItem(itc.ItemName, 1);
+                        inventoryManager.AddItem(item.ItemName, item.amount, item.icon);
                         break;
 
                 }
-                Debug.Log("Yes");
                 Destroy(other.gameObject, 0);
                 
             }

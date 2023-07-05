@@ -34,13 +34,13 @@ namespace IceZK_DEV
             }
         }
 
-        public void AddItem(string itemName, int quantity, Sprite itemSprite)
+        public void AddItem(string itemName, int amount, Sprite itemSprite)
         {
             for (int i = 0; i < itemSlot.Length; i++)
             {
                 if(itemSlot[i].isFull == false)
                 {
-                    itemSlot[i].AddItem(itemName, quantity, itemSprite);
+                    itemSlot[i].AddItem(itemName, amount, itemSprite);
                     return;
                 }
             }
