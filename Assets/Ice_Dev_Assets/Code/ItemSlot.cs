@@ -11,13 +11,13 @@ namespace IceZK_DEV
 
         [Header("Item Data")]
         public string itemName;
-        public int quantity;
+        public int amount;
         public Sprite itemSprite;
         public bool isFull;
 
 
-        [Header("Item Slot")]
-        [SerializeField] private TMP_Text quantityText;
+        [Header("UI Slot")]
+        [SerializeField] private TMP_Text amountText;
         [SerializeField] private Image itemImage;
 
         [Header("Selected Slot")]
@@ -30,15 +30,15 @@ namespace IceZK_DEV
         {
             inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         }
-        public void AddItem(string itemName, int quantity, Sprite itemSprite)
+        public void AddItem(string itemName, int amount, Sprite itemSprite)
         {
             this.itemName = itemName;
-            this.quantity = quantity;
+            this.amount = amount;
             this.itemSprite = itemSprite;
             isFull = true;
 
-            quantityText.text = quantity.ToString();
-            quantityText.enabled = true;
+            amountText.text = amount.ToString();
+            amountText.enabled = true;
             itemImage.sprite = itemSprite;
         }
 
