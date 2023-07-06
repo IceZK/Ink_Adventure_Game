@@ -1546,6 +1546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 5821841979238580058, guid: 52bc31d3bfb4cfc4aa3797a071ace63b, type: 3}
+      propertyPath: NextScene
+      value: Ice_DEV_Town
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

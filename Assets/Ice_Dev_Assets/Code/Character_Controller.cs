@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Ice_DEV
-    {
+namespace IceZK_DEV
+{
     public class Character_Controller : MonoBehaviour
     {
         public float speed;
