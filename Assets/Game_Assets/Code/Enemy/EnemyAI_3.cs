@@ -9,6 +9,7 @@ namespace Scprite.Enmey.EnemyAI
     {
         public NavMeshAgent agent;
         Transform Player;
+        public SpriteRenderer sr;
 
         private void Awake()
         {
@@ -23,6 +24,14 @@ namespace Scprite.Enmey.EnemyAI
         {
 
             agent.SetDestination(Player.position);
+            if (this.transform.position.x > Player.position.x)
+            {
+                sr.flipX = true;
+            }
+            else if (this.transform.position.x < Player.position.x)
+            {
+                sr.flipX = false;
+            }
         }
     }
 }

@@ -12,52 +12,52 @@ namespace IceZK_DEV
         //base stat
         [Header("base stat")]
         public int MaxHp = 0;
-        public float MaxRL = 0;
-        public float MaxOxy = 0;
-        public int MaxCapacity = 0;
+        public float MaxCurse = 0;
+        public float MaxInk = 0;
+        public int BagCap = 0;
 
         public int CurrentHp = 0;
         public int CurrentDamage = 0;
-        public float CurrentRL = 0;
-        public float CurrentOxy = 0;
-        public int CurrentCapacity = 0;
+        public float CurrentCurse = 0;
+        public float CurrentInk = 0;
+        public int CurrentBag = 0;
 
 
         //Modifier stat
         [Header("Modifier stat")]
         public int ModMaxHp = 0;
-        public float ModMaxRL = 0;
-        public float ModMaxOxy = 0;
+        public float ModMaxCurse = 0;
+        public float ModMaxInk = 0;
         public int ModDamage = 0;
-        public int ModCapacity = 0;
+        public int ModBag = 0;
 
         void Start()
         {
             charName = StatOS.charName;
             MaxHp = StatOS.baseMaxHp;
-            MaxRL = StatOS.baseMaxRL;
-            MaxOxy = StatOS.baseMaxOxy;
-            MaxCapacity = StatOS.baseMaxCapacity;
+            MaxCurse = StatOS.baseMaxCurse;
+            MaxInk = StatOS.baseMaxInk;
+            BagCap = StatOS.baseBagCap;
 
             CurrentHp = StatOS.baseHp;
             CurrentDamage = StatOS.baseDamage;
-            CurrentRL = StatOS.baseRL;
-            CurrentOxy = StatOS.baseOxy;
-            CurrentCapacity = StatOS.baseCapacity;
+            CurrentCurse = StatOS.baseCurse;
+            CurrentInk = StatOS.baseInk;
+            CurrentBag = StatOS.baseBag;
 
             ModMaxHp = StatOS.MaxHp;
-            ModMaxRL = StatOS.MaxRL;
-            ModMaxOxy = StatOS.MaxOxy;
+            ModMaxCurse = StatOS.MaxCurse;
+            ModMaxInk = StatOS.MaxInk;
             ModDamage = StatOS.Damage;
-            ModCapacity = StatOS.Capacity;
+            ModBag = StatOS.Bag;
         }
         void Update()
         {
             MaxHp += ModMaxHp;
-            MaxRL += ModMaxRL;
-            MaxOxy += ModMaxOxy;
+            MaxCurse += ModMaxCurse;
+            MaxInk += ModMaxInk;
             CurrentDamage += ModDamage;
-            MaxCapacity += ModCapacity;
+            BagCap += ModBag;
         }
        
     }
