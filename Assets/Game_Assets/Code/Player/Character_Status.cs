@@ -11,7 +11,7 @@ namespace IceZK_DEV
         public string charName = "name";
         //base stat
         [Header("base stat")]
-        public int MaxHp = 0;
+        
         public float MaxCurse = 0;
         public float MaxInk = 0;
         public int BagCap = 0;
@@ -25,7 +25,7 @@ namespace IceZK_DEV
 
         //Modifier stat
         [Header("Modifier stat")]
-        public int ModMaxHp = 0;
+        
         public float ModMaxCurse = 0;
         public float ModMaxInk = 0;
         public int ModDamage = 0;
@@ -34,18 +34,18 @@ namespace IceZK_DEV
         void Start()
         {
             charName = StatOS.charName;
-            MaxHp = StatOS.baseMaxHp;
+            
             MaxCurse = StatOS.baseMaxCurse;
             MaxInk = StatOS.baseMaxInk;
             BagCap = StatOS.baseBagCap;
 
-            CurrentHp = StatOS.baseHp;
+           
             CurrentDamage = StatOS.baseDamage;
             CurrentCurse = StatOS.baseCurse;
             CurrentInk = StatOS.baseInk;
             CurrentBag = StatOS.baseBag;
 
-            ModMaxHp = StatOS.MaxHp;
+            
             ModMaxCurse = StatOS.MaxCurse;
             ModMaxInk = StatOS.MaxInk;
             ModDamage = StatOS.Damage;
@@ -53,7 +53,7 @@ namespace IceZK_DEV
         }
         void Update()
         {
-            MaxHp += ModMaxHp;
+            
             MaxCurse += ModMaxCurse;
             MaxInk += ModMaxInk;
             CurrentDamage += ModDamage;
