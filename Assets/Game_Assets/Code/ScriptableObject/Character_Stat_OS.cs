@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IceZK_DEV
 {
-    [CreateAssetMenu(fileName = "HealthStatusData", menuName = "StatusObjects/Health", order = 1)]
+    [CreateAssetMenu(fileName = "HealthStatusData", menuName = "StatusObjects/Status", order = 1)]
     public class Character_Stat_OS : ScriptableObject
     {
         public string charName = "name";
