@@ -1,3 +1,4 @@
+using IceZK_DEV;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,14 +13,27 @@ namespace Kagerou
         [SerializeField] protected int phase = 0;
         [SerializeField] protected int playerAction = 0;
         [SerializeField] protected int enemyAction = 0;
+        public static string phase_text;
         public Button action_1;
         public Button action_2;
         public Button action_3;
         public Button action_4;
+
+        private float player_baseMaxInk;
+        private float player_baseInk;
+        private float player_baseDamage;
+        private float enemy_baseMaxInk;
+        private float enemy_baseInk;
+        private float enemy_baseDamage;
         // Start is called before the first frame update
         void Start()
         {
-            
+            player_baseMaxInk = Character_Status_Manager.player_baseMaxInk;
+            player_baseInk = Character_Status_Manager.player_baseInk;
+            player_baseDamage = Character_Status_Manager.player_baseDamage;
+            enemy_baseMaxInk = Character_Status_Manager.enemy_baseMaxInk;
+            enemy_baseInk = Character_Status_Manager.enemy_baseInk;
+            enemy_baseDamage = Character_Status_Manager.enemy_baseDamage;
         }
 
         // Update is called once per frame
@@ -63,31 +77,31 @@ namespace Kagerou
         }
         private void AttackSelectPhase()
         {
-            Debug.Log("AttackSelectPhase");
             if(playerAction > 0)
             {
                 phase++;
                 playerAction = 0;
             }
+            phase_text = "Attack Select Phase";
         }
         private void AttackAnimatePhase()
         {
-            Debug.Log("AttackAnimationPhase");
             phase++;
+            phase_text = "Attack Animate Phase";
         }
         private void DefenseSelectPhase()
         {
-            Debug.Log("DefenseSelectPhase");
             if (playerAction > 0)
             {
                 phase++;
                 playerAction = 0;
             }
+            phase_text = "Defense Select Phase";
         }
         private void DefenseAnimatePhase()
         {
-            Debug.Log("DefenseAnimationPhase");
             phase = 0;
+            phase_text = "Defense Animate Phase";
         }
     }
 }
