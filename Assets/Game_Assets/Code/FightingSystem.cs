@@ -39,7 +39,6 @@ namespace Kagerou
         // Update is called once per frame
         void Update()
         {
-            Debug.Log("Phase" + phase);
             Debug.Log(playerAction);
             Debug.Log(enemyAction);
             ActionPhase();
@@ -77,31 +76,65 @@ namespace Kagerou
         }
         private void AttackSelectPhase()
         {
+            enemyAction = Random.Range(1, 5);
             if(playerAction > 0)
             {
                 phase++;
-                playerAction = 0;
             }
             phase_text = "Attack Select Phase";
         }
         private void AttackAnimatePhase()
         {
+            if (enemyAction == playerAction)
+            {
+                enemyAction = 0;
+                playerAction = 0;
+            }
+            else
+            {
+                enemy_baseInk -= player_baseDamage;
+                enemyAction = 0;
+                playerAction = 0;
+            }
             phase++;
             phase_text = "Attack Animate Phase";
         }
         private void DefenseSelectPhase()
         {
+            enemyAction = Random.Range(1, 5);
             if (playerAction > 0)
             {
                 phase++;
-                playerAction = 0;
             }
             phase_text = "Defense Select Phase";
         }
         private void DefenseAnimatePhase()
         {
+            if (enemyAction == playerAction)
+            {
+                enemyAction = 0;
+                playerAction = 0;
+            }
+            else
+            {
+                player_baseInk -= enemy_baseDamage;
+                enemyAction = 0;
+                playerAction = 0;
+            }
             phase = 0;
             phase_text = "Defense Animate Phase";
+        }
+
+        private void WinLoseCondition()
+        {
+            if (player_baseInk <= 0)
+            {
+                Debug.Log("You Lose");
+            }
+            else if (enemy_baseInk <= 0)
+            {
+                Debug.Log("You Win");
+            }
         }
     }
 }
