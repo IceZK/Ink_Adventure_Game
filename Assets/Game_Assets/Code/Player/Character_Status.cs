@@ -22,6 +22,8 @@ namespace IceZK_DEV
         public float CurrentInk = 0;
         public int CurrentBag = 0;
 
+        public int EXP = 0;
+        public int LV = 0;
 
         //Modifier stat
         [Header("Modifier stat")]
@@ -50,6 +52,9 @@ namespace IceZK_DEV
             ModMaxInk = StatOS.MaxInk;
             ModDamage = StatOS.Damage;
             ModBag = StatOS.Bag;
+
+            EXP = StatOS.EXP;
+            LV = StatOS.LV;
         }
         void Update()
         {
