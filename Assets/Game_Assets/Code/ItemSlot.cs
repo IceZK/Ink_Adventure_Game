@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 namespace IceZK_DEV
 {
-    public class ItemSlot : MonoBehaviour, IPointerClickHandler
+    public class ItemSlot : MonoBehaviour, IPointerClickHandler, IDropHandler
     {
 
         [Header("Item Data")]
@@ -67,6 +67,14 @@ namespace IceZK_DEV
         public void OnRightClick()
         {
             //Desrcibe item
+        }
+
+        public void OnDrop(PointerEventData eventData)
+        {
+            if(eventData.pointerDrag != null)
+            {
+                eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            }
         }
     }
 }

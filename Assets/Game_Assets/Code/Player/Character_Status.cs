@@ -63,6 +63,11 @@ namespace IceZK_DEV
             MaxInk += ModMaxInk;
             CurrentDamage += ModDamage;
             BagCap += ModBag;
+            Character_Status_Manager.player_baseInk = CurrentInk;
+        }
+        void GoHome()
+        {
+            ResourceMannage.ink += CurrentInk;
         }
        
     }
