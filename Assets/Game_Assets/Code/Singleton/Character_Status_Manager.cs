@@ -19,16 +19,17 @@ namespace IceZK_DEV
         public static int player_baseDamage = 0;
         public static float player_baseCurse = 0;
         public static float player_baseInk = 0;
+        public static float player_InkTemp = 0;
         public static int player_baseBag = 0;
 
         public static int player_EXP = 0;
         public static int player_LV = 0;
 
         [Header("Enemy stat")]
-        public float Enemy_baseMaxInk = 0;
-        public int Enemy_baseDamage = 0;
-        public float Enemy_baseInk = 0;
-        public float Enemy_EXP = 0;
+        public static float Enemy_baseMaxInk = 0;
+        public static int Enemy_baseDamage = 0;
+        public static float Enemy_baseInk = 0;
+        public static float Enemy_EXP = 0;
         // Use this for initialization
 
         private void Awake()
