@@ -19,6 +19,7 @@ namespace IceZK_DEV
         public static int player_baseDamage = 0;
         public static float player_baseCurse = 0;
         public static float player_baseInk = 0;
+        public static float player_InkTemp = 0;
         public static int player_baseBag = 0;
 
         public static int player_EXP = 0;

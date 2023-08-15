@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace IceZK_DEV
 {
@@ -32,6 +33,19 @@ namespace IceZK_DEV
             maxDrop = StatusSO.maxDrop;
 
             monMat = Random.Range(minDrop, maxDrop);
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                SceneManager.LoadScene("CombatScene", LoadSceneMode.Additive);
+
+                Character_Status_Manager.Enemy_baseMaxInk = this.baseMaxInk;
+                Character_Status_Manager.Enemy_baseDamage = this.baseDamage;
+                Character_Status_Manager.Enemy_baseInk = this.baseInk;
+                Character_Status_Manager.Enemy_EXP = this.EXP;
+                //valueDrop
+            }
         }
 
     }

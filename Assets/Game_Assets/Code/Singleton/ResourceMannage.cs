@@ -9,6 +9,8 @@ public class ResourceMannage : MonoBehaviour
     public static int wood;
     public static int stone;
     public static float ink;
+    public static int day;
+    public static float curse;
 	// Start is called before the first frame update
 
 	 private void Awake()
