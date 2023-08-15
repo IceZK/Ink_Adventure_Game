@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace IceZK_DEV
 {
-    [CreateAssetMenu(fileName = "HealthStatusData", menuName = "StatusObjects/Health", order = 1)]
+    [CreateAssetMenu(fileName = "PlayerStatus", menuName = "StatusObjects/Status", order = 1)]
     public class Character_Stat_OS : ScriptableObject
     {
         public string charName = "name";
@@ -21,6 +21,8 @@ namespace IceZK_DEV
         public float baseInk = 0;
         public int baseBag = 0;
 
+        public int EXP = 0;
+        public int LV = 0;
 
         //Modifier stat
         [Header("Modifier stat")]
