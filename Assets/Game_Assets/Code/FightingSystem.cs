@@ -39,9 +39,10 @@ namespace Kagerou
         // Update is called once per frame
         void Update()
         {
-            Debug.Log(playerAction);
-            Debug.Log(enemyAction);
+            //Debug.Log(playerAction);
+            //Debug.Log(enemyAction);
             ActionPhase();
+            WinLoseCondition();
         }
         public void OnAction1Click()
         {
@@ -127,13 +128,74 @@ namespace Kagerou
 
         private void WinLoseCondition()
         {
-            if (player_baseInk <= 0)
+            //if (enemy_baseInk <= 0)
+            //{
+            //    Debug.Log("You Win");
+            //    QTECombat();
+            //}
+            //else if (player_baseInk <= 0)
+            //{
+            //    Debug.Log("You Lose");
+            //}
+        }
+
+        private void QTECombat()
+        {
+            float time = 5;
+            int round = 0;
+            char[] QTEArray = {'Z', 'X', 'C'};
+            char selectQTE;
+            int index;
+            time -= 1 / 60;
+            do
             {
-                Debug.Log("You Lose");
+                index = Random.Range(0, QTEArray.Length);
+                selectQTE = QTEArray[index];
+                if (index == 0)
+                {
+                    Debug.Log(selectQTE.ToString());
+                    if (Input.anyKeyDown)
+                    {
+                        if (Input.GetKeyDown("Zkey"))
+                        {
+                            time = 5;
+                            round++;
+                        }
+                        else Debug.Log("QTE Failed");
+                    }
+                }
+                else if (index == 1)
+                {
+                    Debug.Log(selectQTE.ToString());
+                    if (Input.anyKeyDown)
+                    {
+                        if (Input.GetKeyDown("Xkey"))
+                        {
+                            time = 5;
+                            round++;
+                        }
+                        else Debug.Log("QTE Failed");
+                    }
+                }
+                else if (index == 2)
+                {
+                    Debug.Log(selectQTE.ToString());
+                    if (Input.anyKeyDown)
+                    {
+                        if (Input.GetKeyDown("Ckey"))
+                        {
+                            time = 5;
+                            round++;
+                        }
+                        else Debug.Log("QTE Failed");
+                    }
+                }
+
             }
-            else if (enemy_baseInk <= 0)
+            while (round < 3);
+            if (time <= 0 && round < 3)
             {
-                Debug.Log("You Win");
+                Debug.Log("QTE Failed");
             }
         }
     }
